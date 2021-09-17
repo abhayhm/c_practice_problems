@@ -4,6 +4,7 @@
  */
 
 #include <stdio.h>
+#include <string.h>
 
 /* Function for converting decimal to binary */
 void print_binary(int number){
@@ -20,7 +21,20 @@ void print_binary(int number){
 
 /* Function for converting binary to decimal */
 void print_decimal(char *number){
+    int number_int = 0;
+    unsigned int len = strlen(number);
     
+    for(int i = 0; i < len; ++i){
+        if((number[i] == '1') && (number[i] != '-')){
+            number_int = number_int | (1 << (len - i - 1));           
+        }
+    }    
+    
+    if(number[0] == '-'){
+        number_int = (~number_int) + 1;
+    }
+    
+    printf("%d\n",number_int);    
 }
 
 int main(){
