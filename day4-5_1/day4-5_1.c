@@ -7,12 +7,14 @@
 
 #define SIZE 10
 
+/* Function for swapping */
 void swap(int* a, int* b){
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
+/* Function for sorting in ascending */
 void sort_a(int* array, int n){
     for(int i = 0; i < n ; ++i){
         for(int j = 0; j < n - 1; ++j){
@@ -23,6 +25,7 @@ void sort_a(int* array, int n){
     }
 }
 
+/* Function for sorting in descending */
 void sort_d(int* array, int n){
     for(int i = 0; i < n; ++i){
         for(int j = 0; j < n - 1; ++j){
