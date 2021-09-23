@@ -1,14 +1,14 @@
 /* Name: Abhay HM
  * Date: 23/09/2021
- * Info: Program to construct and add two matrices. 
+ * Info: Program to construct and check if two matrices are same. 
  */
 
 #include <stdio.h>
 #include "matrix.h"
 
 int main(){
-    int **matrix1 = NULL, **matrix2 = NULL, **matrix_total = NULL;
-    int rows = 0, columns = 0;
+    int **matrix1 = NULL, **matrix2 = NULL;
+    int rows = 0, columns = 0, flag = 0;
 
     /* Reading from user */
     printf("Enter the number of rows of matrix:");
@@ -20,10 +20,9 @@ int main(){
     /* Construct matrix */
     matrix1 = matrix_construction(rows, columns);
     matrix2 = matrix_construction(rows, columns);
-    matrix_total = matrix_construction(rows, columns);
 
     /* If construction failed */
-    if(NULL == matrix1 || NULL == matrix2 || NULL == matrix_total){
+    if(NULL == matrix1 || NULL == matrix2){
         printf("Matrix construction failed\n");
         return 0;
     }
@@ -41,19 +40,29 @@ int main(){
     matrix_display(matrix1, rows, columns);
     
     /* Constructed matrix2 */
-    printf("Constructed matrix1:\n");
+    printf("Constructed matrix2:\n");
     matrix_display(matrix2, rows, columns);
 
-    /* Adding two matrices */
+    /* Comparing two matrices */
     for(int i = 0; i < rows; ++i){
         for(int j = 0; j < columns; ++j){
-            matrix_total[i][j] = matrix1[i][j] + matrix2[i][j];
+            if(matrix1[i][j] != matrix2[i][j]){
+                flag = 1;
+                break;
+            }
+        }
+        if(1 == flag){
+            break;
         }
     }
 
-    /* Addition of matrix */
-    printf("Matrix addition:\n");
-    matrix_display(matrix_total, rows, columns);
+    /* Info for the user */
+    if(1 == flag){
+        printf("Matrices are not equal\n");
+    }
+    else{
+        printf("Matrices are equal\n");
+    }
 
     /* Exit */
     return 0;

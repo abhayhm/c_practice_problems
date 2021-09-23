@@ -6,19 +6,14 @@
 #include <stdio.h>
 #include "matrix.h"
 
+#define ROWS 5
+#define COLUMNS 5
+
 int main(){
     int **matrix = NULL;
-    int rows = 0, columns = 0;
-
-    /* Reading from user */
-    printf("Enter the number of rows of matrix:");
-    scanf("%d",&rows);
-
-    printf("Enter the number of column of matrix:");
-    scanf("%d",&columns);
 
     /* Construct matrix */
-    matrix = matrix_construction(rows, columns);
+    matrix = matrix_construction(ROWS, COLUMNS);
 
     /* If construction failed */
     if(NULL == matrix){
@@ -27,12 +22,12 @@ int main(){
     }
     
     /* Reading values to matrix */
-    printf("Enter the values for matrix:\n");
-    matrix_read(matrix, rows, columns);
+    printf("Enter the values for 5*5 matrix:\n");
+    matrix_read(matrix, ROWS, COLUMNS);
 
     /* Constructed matrix */
     printf("Constructed matrix:\n");
-    matrix_display(matrix, rows, columns);
+    matrix_display(matrix, ROWS, COLUMNS);
 
     /* Exit */
     return 0;
