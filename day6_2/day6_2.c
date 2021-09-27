@@ -1,6 +1,6 @@
 /* Name: Abhay HM
  * Date: 26/09/2021
- * Info: 
+ * Info: Program to add, subtract and multiple two complex numbers.
  */
 
 #include <stdio.h>
