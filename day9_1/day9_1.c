@@ -3,6 +3,7 @@
  * Info: Program to display conttents of the file. 
  */
 
+#define _GNU_SOURCE
 #include <stdio.h>
 
 #define SIZE 100
@@ -34,6 +35,9 @@ int main(){
         fputc(ch, stdout);
     }
 
+	/* Closing file */
+	fcloseall();
+	
     /* Exit */
     return 0;
 }

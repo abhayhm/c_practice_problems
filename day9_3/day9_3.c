@@ -3,6 +3,7 @@
  * Info: Program to count characters spaces tabs and lines in file. 
  */
 
+#define _GNU_SOURCE
 #include <stdio.h>
 
 #define SIZE 100
@@ -57,6 +58,9 @@ int main(){
     printf("Number of tab('s) in %s: %u\n",file_name, tab_count);
     printf("Number of line('s) in %s: %u\n",file_name, line_count);
 
+	/* Closing file */
+	fcloseall();
+	
     /* Exit */
     return 0;
 }

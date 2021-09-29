@@ -1,8 +1,9 @@
 /* Name: Abhay HM
  * Date: 28/09/2021
- * Info: Program to copy conttents of source file to destination file. 
+ * Info: Program to copy contents of source file to destination file. 
  */
 
+#define _GNU_SOURCE
 #include <stdio.h>
 
 #define SIZE 100
@@ -45,12 +46,15 @@ int main(){
     fseek(src_file_ptr, 0L, SEEK_SET);
     fseek(dest_file_ptr, 0L, SEEK_SET);
 
-    /* Displaying content of file */
+    /* Copying content of file */
     do{
         ch = fgetc(src_file_ptr);
         fputc(ch, dest_file_ptr);
     }while(EOF != ch);
 
+	/* Closing file */
+	fcloseall();
+	
     /* Info for user */
     printf("Contents copied to destination file successfully\n");
 
