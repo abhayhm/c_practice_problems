@@ -8,7 +8,7 @@ FILE *file_open(char *file_name, char *mode){
     
     /* If file not exist */
     if(NULL == fptr){
-        printf("%s: No such file or directory\n");
+        printf("%s: No such file or directory\n",file_name);
         return 0;
     }
 

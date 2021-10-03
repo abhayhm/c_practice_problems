@@ -11,7 +11,7 @@ int search_detail(unsigned long long number, unsigned int mode){
     dir = file_open(DIRECTORY, "r");
 
     /* Searching for details */
-    while(1){
+    while(!feof(dir)){
         /* Reading details from file */
         fscanf(dir,"%llu",&detail.number);
         fseek(dir, 1L, SEEK_CUR);
@@ -30,7 +30,7 @@ int search_detail(unsigned long long number, unsigned int mode){
             else{
                 printf("I/O : Name:%s\n",detail.name);
                 printf("I/O : Number:%llu\n",detail.number);
-                printf("I/O : Address:%s\n".detail.address);
+                printf("I/O : Address:%s\n",detail.address);
 
                 file_close(dir);
                 return line;

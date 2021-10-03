@@ -5,6 +5,7 @@
 #include <stdbool.h>
 
 #define DIRECTORY "telephone_directory.txt"
+#define BACKUP "backup.txt"
 
 /* Structure for directory */
 typedef struct{
