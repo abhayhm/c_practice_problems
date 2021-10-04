@@ -28,7 +28,7 @@ int main(){
         printf("d) Search number and details\n");
         printf("[Q/q] to quit program\n");
         printf("Enter your choice:");
-        scanf("%c",&option);
+        scanf(" %c",&option);
         getchar();
 
         switch(option){
@@ -41,6 +41,7 @@ int main(){
                         unsigned long long number = 0;
                         printf("Enter the phone number to delete:");
                         scanf("%llu",&number);
+						getchar();
                         delete_detail(number, 1);
                      }break;
             
@@ -48,6 +49,7 @@ int main(){
                         unsigned long long number = 0;
                         printf("Enter the phone number to edit:");
                         scanf("%llu",&number);
+						getchar();
                         edit_detail(number);
                      }break;
             
@@ -55,20 +57,19 @@ int main(){
                         unsigned long long number = 0;
                         printf("Enter the phone number to search:");
                         scanf("%llu",&number);
+						getchar();
                         search_detail(number, 1);
                      }break;
             
-            case 'q':{}break;
+            case 'q':{
+						/* Exit */
+						return 0;
+					 }break;
             
             default:{
                         printf("Invalid input\n");
                     }
         }
-		
-		while('\n' != getchar());
     }
-    
-    /* Exit */
-    return 0;
 }
 

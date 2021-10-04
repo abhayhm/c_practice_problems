@@ -16,6 +16,7 @@ int search_detail(unsigned long long number, unsigned int mode){
         fscanf(dir,"%llu",&detail.number);
         fseek(dir, 1L, SEEK_CUR);
         fscanf(dir,"%[^|]s",detail.name);
+		fseek(dir, 1L, SEEK_CUR);
         fscanf(dir,"%[^\n]s",detail.address);
         
         ++line;

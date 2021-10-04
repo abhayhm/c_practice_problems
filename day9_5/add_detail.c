@@ -12,7 +12,7 @@ bool add_detail(void){
     printf("INFO: Reading details\n");
     printf("I/O : Enter name:");
     fgets(detail.name, 20, stdin);
-    
+	
 	len = strlen(detail.name);
 	detail.name[len-1] = '\0';
 	
