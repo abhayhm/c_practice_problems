@@ -3,8 +3,7 @@
 
 /* Function declaration */
 unsigned int random_number(void);
-void snake_ladder(unsigned int **, unsigned int, unsigned int);
-void printf_board(unsigned int **, unsigned int, unsigned int);
-void info(void);
+unsigned int snake_ladder(unsigned int);
+void print_board(unsigned int, unsigned int);
 
 #endif
